@@ -1,0 +1,15 @@
+import { Router } from "express";
+import { createCaCancer } from "../controllers/controller.247CAC.js";
+
+const router = Router();
+
+router.get("/hola", (req, res) => {
+    console.log("hola ruta")
+    return res.status(200).json({
+        message: "Hola desde la ruta de prueba"})
+});
+
+router.post("/crear", createCaCancer);
+
+
+export default router;
