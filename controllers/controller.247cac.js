@@ -1,27 +1,39 @@
 import caCancerModel from "../models/model.247CAC.js";
 
+const listaRegistros = async (req, res) => {
+    try {
+        const registrosList = await caCancerModel.find({});
+        return res.status(200).json(registrosList);
+        
+    } catch (error) {
+        return res.status(500).send(error);
+    }
+}
+
 const createCaCancer = async (req, res) => {
     console.log("Datos recibidos:", req.body);
     try {
-        //console.log("Datos recibidos:", req.body);
-        // const toCreate = fetchRegCa(req.body);
-        // if (toCreate==null) {
-        //     return res.status(400).send("Registro no valido")
-            
-        // }
-
         const regCac= new caCancerModel(req.body);
         await regCac.save();
         return res.status(201).json({regCac});
     } catch (error) {
-
-        // if (error.code === 11000) {
-        //     return res.status(400).json({ message: "Pokemon ya existe", error });
-        // }
         console.error("Error al crear el registro:", error);
-        return res.status(500).json({ message: "Error crear registro" });
-        
+        return res.status(500).json({ message: "Error crear registro" });        
     }
 }
 
-export {createCaCancer};
+const modificarRegistroCa = async (req, res) => {
+    try {
+        const {id} = req.params;
+        const registro = req.body;
+        const registroCambiado = await caCancerModel.findByIdAndUpdate(id, registro, {new: true});
+        if (!registroCambiado) {
+            return res.status(404).json({message: "registro no encontrado"});
+        }
+        return res.status(200).json({message: "registro modificado exitosamente SI", id});
+    } catch (error) {
+        return res.status(500).send(error);
+    }
+}
+
+export {createCaCancer, modificarRegistroCa,listaRegistros};

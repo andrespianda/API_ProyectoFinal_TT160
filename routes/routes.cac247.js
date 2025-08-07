@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createCaCancer } from "../controllers/controller.247CAC.js";
+import { createCaCancer, listaRegistros, modificarRegistroCa } from "../controllers/controller.247CAC.js";
 
 const router = Router();
 
@@ -10,6 +10,8 @@ router.get("/hola", (req, res) => {
 });
 
 router.post("/crear", createCaCancer);
+router.get("/lista", listaRegistros);
+router.put("/actualizar/:id", modificarRegistroCa);
 
 
 export default router;
