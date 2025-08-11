@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createCaCancer, listaRegistros, modificarRegistroCa } from "../controllers/controller.247CAC.js";
+import { createCaCancer, listaRegistros, modificarRegistroCa } from "../controllers/controller.247cac.js";
 
 const router = Router();
 
