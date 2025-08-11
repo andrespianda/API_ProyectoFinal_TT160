@@ -178,7 +178,8 @@ const cancerReporteSchema = new mongoose.Schema({
   fechaDesafiliacionEPS: { type: String },
   fechaMuerte: { type: String },
   causaMuerte: { type: String },
-  codigoUnicoIdentificacion: { type: String }
+  codigoUnicoIdentificacion: { type: String },
+  modificacion: { type: String }
 });
 
 export default mongoose.model('CancerReporte', cancerReporteSchema);
