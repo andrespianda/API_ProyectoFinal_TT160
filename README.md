@@ -28,18 +28,20 @@ Este backend:
 En la carpeta del backend, ejecutar:
 ```bash
 npm install
+```
 ---
 ## 2️⃣ Configurar variables de entorno
-Crea un archivo **.env** en la raíz del backend con el contenido de las credenciales necesarias.
-
+- Crea un archivo **.env** en la raíz del backend con el contenido de las credenciales necesarias.
 ---
+
 ## 3️⃣ El backend quedará disponible en:
 
-http://localhost:3005
+- http://localhost:3005
 ---
 ## 4️⃣ Método	Ruta	Descripción
+
 - **POST	/res247/crear**	-> Crea un nuevo registro de cáncer.
-- **GET	/res247/lista**	-> Lista todos los registros almacenados.
-- **PUT	/res247/actualizar/:id**	-> Modifica un registro existente por su ID.
+- **GET	  /res247/lista**	-> Lista todos los registros almacenados.
+- **PUT	  /res247/actualizar/:id**	-> Modifica un registro existente por su ID.
 
 
